@@ -1,8 +1,9 @@
 const express = require('express');
 const { logger } = require('./middleware/middleware')
+const usersRouter = require('./users/users-router')
 
 const server = express();
-
+server.use('/api/users', usersRouter)
 server.use(express.json())
 
 server.use(logger)
